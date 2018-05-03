@@ -1,4 +1,4 @@
-function fibonacci(order) {
+function fibonacciLoop(order) {
     if (order === 1 || order === 2) {
         return '1';
     }
@@ -15,8 +15,21 @@ function fibonacci(order) {
     return fib3;
 }
 
-function runFib() {
+function runFibLoop() {
     const order = parseInt(prompt());
-    const result = fibonacci(order);
+    const result = fibonacciLoop(order);
+    alert(result);
+}
+
+
+function fibonacciRecursion (order){
+    if (order <= 1) {
+        return order;
+    }
+    return fibonacciRecursion(order-1) + fibonacciRecursion(order-2);
+}
+
+function runFibRecursion() {
+    const result = fibonacciRecursion(parseInt(prompt()));
     alert(result);
 }
